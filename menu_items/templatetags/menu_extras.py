@@ -50,6 +50,6 @@ def draw_menu(context, menu_slug):
 
     return {
         'menu_tree_dict': menu_tree_dict,
-        'parents': sorted(menu_tree_dict.keys()),
         'selected_item_id': menu_item_id,
+        'parent': -1,
     }

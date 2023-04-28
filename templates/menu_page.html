@@ -2,6 +2,8 @@
 {% load menu_extras %}
 
 {% block content %}
+  <a href="{% url 'menu_items:menu_item' %}">CLOSE ALL</a>
+  <br>
   {% for menu in menus %}
     <div>
       {{ menu.name }}
