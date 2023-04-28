@@ -1,0 +1,24 @@
+{% load menu_extras %}
+
+{% with parent=parents.0 %}
+  <ul>
+    {% if menu_tree_dict|get:parent|length > 0 %}
+      {% for item in menu_tree_dict|get:parent %}
+        <li>
+          <a href="{% url 'menu_items:menu_item' menu_item_id=item.id %}">
+            {% if item.id == selected_item_id %}
+              <i><span style='color: blue;'>{{ item.name }}</span></i>
+            {% else %}
+              {{ item }}
+            {% endif %}
+          </a>
+          {% if parents|length > 1 and item.id == parents.1 %}
+            {% with parents=parents|slice:"1:" %}
+              {% include 'menu_tree.html' %}
+            {% endwith %}
+          {% endif %}
+        </li>
+      {% endfor %}
+    {% endif %}
+  </ul>
+{% endwith %}

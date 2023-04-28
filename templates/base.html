@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8'>
+    <title>{% block title %} Title {% endblock %}</title>
+    <style>
+      body {
+        font-size: 1.3rem;
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0 0 0 .75rem;
+      }
+      div {
+        float: left;
+        margin-right: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    {% block content %}{% endblock %}
+  </body>
+</html>
